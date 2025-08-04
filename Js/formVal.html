@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title style="color: aqua;">
+            Body Measurements Module
+        </title>
+    </head>
+<body>
+<h1 style="color: aqua;">Body Measurements</h1>
+<form method="post" action="abc.html" enctype="multipart/form-data" onsubmit="return validateForm()">
+    <fieldset>
+        Height : <input type="number" name="height" value="" id="height" onblur="checkHeight()" >
+        <p id="heightError"></p>
+
+        Weight : <input type="number" name="weight" value="" id="weight" onblur="checkWeight()" >
+        <p id="weightError"></p>
+
+        Waist : <input type="number" name="waist" value="" id="waist" onblur="checkWaist()" >
+        <p id="waistError"></p>
+
+        Chest : <input type="number" name="chest" value="" id="chest" onblur="checkChest()" >
+        <p id="chestError"></p>
+        
+        Hips : <input type="number" name="hips" value="" id="hips" onblur="checkHips()" >
+        <p id="hipsError"></p>
+        
+
+        <input type="submit" name="" value="Submit">
+        <p id="success"></p>
+
+    </fieldset>
+
+
+</form>
+
+<p id="demo"></p>
+
+<script>
+    let height = 0;
+    let weight = 0;
+    let waist = 0;
+    let chest = 0;
+    let hips = 0;
+    let heightError = document.getElementById('heightError');
+    let weightError = document.getElementById('weightError');
+    let waistError = document.getElementById('waistError');
+    let chestError = document.getElementById('chestError');    
+    let hipsError = document.getElementById('hipsError');
+
+    function checkHeight(){
+        let value = parseFloat(document.getElementById('height').value);
+        heightError = document.getElementById('heightError').value;
+        if(heightError == isNaN(value) || value < 2 || value > 10){
+            heightError.innerHTML = "please enter value between 2-10 feet!"
+            heightError.style.color = 'red';   
+            return false;  
+        }
+        else{
+            heightError.innerHTML = "";
+            return true;
+        }
+    }
+
+    function checkWeight(){
+        let value = parseFloat(document.getElementById('weight').value);
+        weightError = document.getElementById('weightError').value;
+        if(weightError == isNaN(value) || value < 20 || value > 100){
+            weightError.innerHTML = "please enter value between 20-100 kg!"
+            weightError.style.color = 'red';     
+        }
+        else{
+            weightError.innerHTML = "";
+        }
+    }
+    function checkWaist(){
+        let value = parseFloat(document.getElementById('waist').value);
+        waistError = document.getElementById('waistError').value;
+        if(waistError == isNaN(value) || value < 20 || value > 100){
+            waistError.innerHTML = "please enter value between 20-100 cm!"
+            waistError.style.color = 'red';     
+        }
+        else{
+            waistError.innerHTML = "";
+        }
+    }
+
+    function checkChest(){
+        let value = parseFloat(document.getElementById('chest').value);
+        chestError = document.getElementById('chestError').value;
+        if(chestError == isNaN(value) || value < 20 || value > 100){
+            chestError.innerHTML = "please enter value between 20-100 cm!"
+            chestError.style.color = 'red';     
+        }
+        else{
+            chestError.innerHTML = "";
+        }
+    }
+
+    function checkHips(){
+        let value = parseFloat(document.getElementById('hips').value);
+        hipsError = document.getElementById('hipsError').value;
+        if(hipsError == isNaN(value) || value < 20 || value > 100){
+            hipsError.innerHTML = "please enter value between 20-100 cm!"
+            hipsError.style.color = 'red';     
+        }
+        else{
+            hipsError.innerHTML = "";
+        }
+    }
+
+
+    function validateForm(){
+        checkHeight() &
+        checkWeight() &
+        checkWaist() &
+        checkHips();
+    }
+
+</script>
+
+</body>
+</html>
