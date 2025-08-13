@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Age Check</title>
+</head>
+<body>
+  <h2>Community Age Check Form</h2>
+  <form>
+    Enter Your Age :
+        <input type="text" name="age" id="age" onblur="checkAge()">
+        <p id="ageMessage"></p><br>
+  </form>
+
+  <script>
+    function checkAge() {
+        let ageInput = document.getElementById('age');
+        let message = document.getElementById('ageMessage');
+        let age = parseInt(ageInput.value, 10);
+
+        
+        message.style.color = '';
+
+        if (isNaN(age)) {
+            message.textContent = "";
+            return;
+        }
+
+        if (age < 40) {
+            message.textContent = "To be a part of the community, you need to at least 40.";
+            } else if (age >= 40 && age <= 50) {
+            message.textContent = "You are the youngsters of this community.";
+        } 
+        else if (age > 50) {
+            message.textContent = "Top level members of the group.";
+            message.style.color = 'red'; 
+        }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Form</title>
+    <link rel="stylesheet" href="form.css"/>
+</head>
+<body>
+    <div>
+        <h1>Login Page</h1>
+        <form method="post" action="abc.html" enctype="multipart/form-data" onsubmit="return validateForm()">
+            First Name:
+            <input type="text" name="fname" id="fname" onblur="checkFname()">
+            <p id="fnameError"></p><br>
+
+            Last Name:
+            <input type="text" name="lname" id="lname" onblur="checkLname()">
+            <p id="lnameError"></p><br>
+
+            <button type="submit">Submit</button>
+            <p id="success"></p>
+        </form>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Username Uppercase Form</title>
+</head>
+<body>
+  <form method="post" action="abc.html" enctype="multipart/form-data" onsubmit="return validateForm()">
+    User Name:
+            <input type="text" name="uname" id="uname" onblur="checkUname()">
+            <p id="unameError"></p><br>
+  </form>
+
+  <script>
+    function checkUname(){
+        let uname = document.getElementById('uname').value.trim();
+        let unameError = document.getElementById('unameError');
+        let unameInput = document.getElementById('uname');
+        unameInput.addEventListener('input', function () {
+        this.value = this.value.toUpperCase();});
+        if (uname === "") {
+            unameError.innerHTML = "Please enter your name.";
+            unameError.style.color = 'red';
+            return false;
+        } 
+        else if (uname.length < 2) {
+            unameError.innerHTML = "User name must be at least 2 characters.";
+            unameError.style.color = 'red';
+            return false;
+        } 
+        else {
+            unameError.innerHTML = "";
+            return true;
+        }
+    }
+    
+    function validateForm() {
+    let isvalid = checkUname();
+    }
+  </script>
+</body>
+</html>
